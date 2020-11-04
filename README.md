@@ -7,7 +7,9 @@ This code Pattern will help you understand how an IoT endpoint communicates with
 
 ## Pre-requisites
 
+- IBM Cloud account
 - HERE Developer accuont
+- Python installed (3.8 prefered)
 - Any text editor (We are using VS Code)
 
 ## Learning outcomes
