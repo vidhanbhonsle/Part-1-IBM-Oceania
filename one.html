@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HERE IBM Oceanic Workshop</title>
+        <!-- SCRIPTS -->
+        <meta name="viewport" charset="UTF-8" content="initial-scale=1.0, width=device-width" />
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
+    </head>
+       <body>
+        <div id="mapContainer" style="width: 98vw; height: 88vh; display: block; margin: 0 auto; border: solid 2px black; margin-top: 5px;" > </div>
+        <input type="button" onclick="showDetails()" value = "Show Details" style="width: 200px; height: 30px; border: 2px solid black; display: block; margin: 0 auto; margin-top: 10px;">
+        </div>
+        <div id="panel" style="width: 30vw; background: #39B6B3; color: white; margin-top: 20px;display: block; margin: 0 auto;"></div>
+    </body>
+    <script>
+        var platform = new H.service.Platform({
+            apikey: "EQAcKacnDczuCuh4U7zFK9buugVgWtubjW9SdZWuG4M"   
+        });
+
+        // Obtain the default map types from the platform object
+        var defaultLayers = platform.createDefaultLayers();
+
+        // Get your current position from wego.here.com
+		var positionOne = {lat: 12.96677, lng: 77.75164};
+		var positionTwo = {lat: 12.85677, lng: 77.83164};
+		var positionThree = {lat: 12.99677, lng: 77.63164};
+		var positionFour = {lat: 12.86677, lng: 77.73164};
+		var positionFive = {lat: 12.95677, lng: 77.83164};
+		var positionSix = {lat: 12.84677, lng: 77.63164};
+		var positionSeven = {lat: 12.87677, lng: 77.74164};
+		var positionEight = {lat: 12.95677, lng: 77.78164};
+		var positionNine = {lat: 12.96677, lng: 77.83164};
+    var positionTen = {lat: 12.95677, lng: 77.73164};
+    var positionTruck = {lat: 12.80677, lng: 77.93164};
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.vector.normal.map,
+            {
+                zoom: 12,
+                center: positionSeven,
+                pixelRatio: window.devicePixelRatio || 1
+            });
+
+        window.addEventListener('resize', () => map.getViewPort().resize());
+        
+        var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+
+        var mapEvents = new H.mapevents.MapEvents(map);
+        var behavior = new H.mapevents.Behavior(mapEvents);
+
+        // Get an instance of the routing service for using the routing API
+        var router = platform.getRoutingService();
+
+        // Get an instance of the geocoding and search service:
+        var service = platform.getSearchService();
+		
+		// create an icon for the marker. Choose any image you want. I created mine using draw.io     
+        var homeIcon = new H.map.Icon('img/home.png'); 
+        var truckIcon = new H.map.Icon('img/truck.png'); 
+            
+        // Create a marker using the previously instantiated icon
+		var posMarker1 = new H.map.Marker(positionOne,{icon:homeIcon});
+		var posMarker2 = new H.map.Marker(positionTwo,{icon:homeIcon});
+		var posMarker3 = new H.map.Marker(positionThree,{icon:homeIcon});
+		var posMarker4 = new H.map.Marker(positionFour,{icon:homeIcon});
+		var posMarker5 = new H.map.Marker(positionFive,{icon:homeIcon});
+		var posMarker6 = new H.map.Marker(positionSix,{icon:homeIcon});
+		var posMarker7 = new H.map.Marker(positionSeven,{icon:homeIcon});
+		var posMarker8 = new H.map.Marker(positionEight,{icon:homeIcon});
+		var posMarker9 = new H.map.Marker(positionNine,{icon:homeIcon});
+    var posMarker10 = new H.map.Marker(positionTen,{icon:homeIcon});
+    //var posMarkerTruck = new H.map.Marker(positionTruck,{icon:truckIcon});
+                
+        // Add the marker to the map 
+        map.addObject(posMarker1);
+        map.addObject(posMarker2);
+        map.addObject(posMarker3);
+        map.addObject(posMarker4);
+        map.addObject(posMarker5);
+        map.addObject(posMarker6);
+        map.addObject(posMarker7);
+        map.addObject(posMarker8);
+        map.addObject(posMarker9);
+        map.addObject(posMarker10);
+        //map.addObject(posMarkerTruck);
+
+function addDraggableMarker(map, behavior) {
+// Step 2: Set up a marker and make it volatile and draggable
+var marker = new H.map.Marker(positionTruck, {icon:truckIcon}, {
+  // mark the object as volatile for the smooth dragging
+  volatility: true
+});
+// ensure that the marker can receive drag events
+marker.draggable = true;
+map.addObject(marker);
+
+// Step 3: Handle the dragstart event (user starts dragging the pointer)  
+map.addEventListener('dragstart', function (ev) {
+  let target = ev.target;
+  let pointer = ev.currentPointer;
+  // check whether event target is a marker
+  if (target instanceof H.map.Marker) {
+    let targetPosition = map.geoToScreen(target.getGeometry());
+    // calculate the offset between mouse and target's position  
+    target['offset'] = new H.math.Point(pointer.viewportX - targetPosition.x, pointer.viewportY - targetPosition.y);
+    // disable the default draggability of the underlying map
+    behavior.disable();
+  }
+}, false);
+
+// Step 4: Handle the drag event (user is dragging the pointer)        
+map.addEventListener('drag', function (ev) {
+  let target = ev.target;
+  let pointer = ev.currentPointer;
+  // check whether event target is a marker
+  if (target instanceof H.map.Marker) {
+    // set new position of marker to position of pointer, taking the offset from Step 3 into account
+    target.setGeometry(map.screenToGeo(pointer.viewportX - target['offset'].x, pointer.viewportY - target['offset'].y));
+  }
+}, false);
+
+// Step 5: Handle the dragend event (user stops dragging the pointer) 
+map.addEventListener('dragend', function (ev) {
+  let target = ev.target;
+  // check whether event target is a marker
+  if (target instanceof H.map.Marker) {
+    // re-enable the default draggability of the underlying map
+    behavior.enable();
+  }
+}, false);
+}
+addDraggableMarker(map, behavior); 
+
+function showDetails(){
+
+    let url = 'https://wse.ls.hereapi.com/2/findsequence.json'+
+    '?apiKey=eJtOWcz0rG2MovFXxmEZOBji86azNK035at5rNDx5xg'+
+    '&start='+positionTruck.lat+','+positionTruck.lng+
+    '&destination0='+positionOne.lat+','+positionOne.lng+
+    '&destination1='+positionTwo.lat+','+positionTwo.lng+
+    '&destination2='+positionThree.lat+','+positionThree.lng+
+    '&destination3='+positionFour.lat+','+positionFour.lng+
+    '&destination4='+positionFive.lat+','+positionFive.lng+
+    '&destination5='+positionSix.lat+','+positionSix.lng+
+    '&destination6='+positionSeven.lat+','+positionSeven.lng+
+    '&destination7='+positionEight.lat+','+positionEight.lng+
+    '&destination8='+positionNine.lat+','+positionNine.lng+
+    '&destination9='+positionTen.lat+','+positionTen.lng+
+    '&mode=fastest;car;traffic:disabled'+
+    '&improveFor=time'; 
+
+    fetch(url)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+    }, error =>{
+        console.error(error);
+    });
+  //showRoute();
+}
+function showRoute(){
+}
+</script>
+</html>
