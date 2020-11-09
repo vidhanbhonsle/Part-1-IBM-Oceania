@@ -1,51 +1,57 @@
-# Search for all hospitals around us and place markers on them
+# Define Delivery Sequence
 
-Add the following code before </script> tag
+##  
+- Add the following code before </script> tag
 
-```javascript
-           
-            function showHospitals(){
+```javascript          
+ function showDetails(){
+            let url = 'https://wse.ls.hereapi.com/2/findsequence.json'+
+            '?apiKey=REST_API_KEY'+
+            '&start='+destinations.truck.lat+','+destinations.truck.lng+
+            '&destination0='+destinations.destination1.lat+','+destinations.destination1.lng+
+            '&destination1='+destinations.destination2.lat+','+destinations.destination2.lng+
+            '&destination2='+destinations.destination3.lat+','+destinations.destination3.lng+
+            '&destination3='+destinations.destination4.lat+','+destinations.destination4.lng+
+            '&destination4='+destinations.destination5.lat+','+destinations.destination5.lng+
+            '&destination5='+destinations.destination6.lat+','+destinations.destination6.lng+
+            '&destination6='+destinations.destination7.lat+','+destinations.destination7.lng+
+            '&destination7='+destinations.destination8.lat+','+destinations.destination8.lng+
+            '&destination8='+destinations.destination9.lat+','+destinations.destination9.lng+
+            '&destination9='+destinations.destination10.lat+','+destinations.destination10.lng+
+            '&mode=fastest;car;traffic:disabled'+
+            '&improveFor=time'; 
 
-                let param = {
-                    at : myPosition.lat+','+myPosition.lng,
-                    q: "hospital",
-                    limit:10
-                }; 
-
-                service.browse(param,displayHospitals,alert);
+            async function getapi(url){
+            
+            // Storing response 
+            const response = await fetch(url); 
+            var data = await response.json(); 
+            }
+            getapi(url);
+            
+            var values = data.results[0].waypoints;
+            
+            var origin = null;
+            
+            for (i in values){
+                a = values[i];
+            
+                var lat = a['lat'];
+                var lng = a['lng'];
+            
+                if (!origin){
+                    origin = {lat,lng};
+                    continue;
+                } else{
+                    var destin = {lat,lng};
+                    showRoute(origin,destin);
+                    origin = destin;
+                    console.log(JSON.stringify(origin) + ':::' + JSON.stringify(destin));
+                    continue; 
+                }
+                }
             }
 ```
 </br> 
 
-# Lets add nice markers to display these hospitals
-
-Add the following code before </script> tag
-
-```javascript
-            function displayHospitals(response){
-
-                var hospitalIcon = new H.map.Icon('img/hospital.png');
-
-                // A group that can hold map objects:
-
-                var restGroup = new H.map.Group();
-
-                for(let i = 0; i<response.items.length; i++){
-                    let restPosition = response.items[i].position; 
-              
-                    let data = response.items[i].title;
-              
-                    let restMarker = new H.map.Marker(restPosition,{icon: hospitalIcon} );
-
-                    // Add the marker to the group (which causes it to be displayed on the map)
-
-                    restGroup.addObject(restMarker);
-                    }
-
-            // Add the group to the map object
-
-                map.addObject(restGroup);
-        }
-```
-
-[![Foo](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/img/s4.png)](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/Step4.md) 
+[![Foo](/img/s4.png)](/Step4.md) 
