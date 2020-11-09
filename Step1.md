@@ -32,16 +32,13 @@
         // Obtain the default map types from the platform object:
         var defaultLayers = platform.createDefaultLayers();
 
-        // Get your current position from wego.here.com
-        var myPosition = {lat: 12.95677, lng: 77.73164};
-
         // Instantiate (and display) a map object:
         var map = new H.Map(
             document.getElementById('mapContainer'),
             defaultLayers.vector.normal.map,
             {
                 zoom: 11,
-                center: myPosition
+                center: {lat: 12.95677, lng: 77.73164}
             });
 
         var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
