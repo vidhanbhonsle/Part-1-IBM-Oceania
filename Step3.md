@@ -1,7 +1,8 @@
 # Define Delivery Sequence
 
-##  
-- Add the following code before </script> tag
+## Add the following code before </script> tag
+
+- Replace "REST_API_KEY" with your own
 
 ```javascript          
  function showDetails(){
