@@ -26,7 +26,19 @@
         var defaultLayers = platform.createDefaultLayers();
 
         // Get your current position from wego.here.com
-        // var myPosition = {lat: 12.95677, lng: 77.73164};
+        var destinations = { 
+            "destination1": {lat: 12.96677,lng: 77.75164}, 
+            "destination2": {lat: 12.85677, lng: 77.83164},
+            "destination3": {lat: 12.99677, lng: 77.63164},
+            "destination4": {lat: 12.86677, lng: 77.73164},
+            "destination5": {lat: 12.95677, lng: 77.83164},
+            "destination6": {lat: 12.84677, lng: 77.63164},
+            "destination7": {lat: 12.87677, lng: 77.74164},
+            "destination8": {lat: 12.95677, lng: 77.78164},
+            "destination9": {lat: 12.96677, lng: 77.83164},
+            "destination10":{lat: 12.95677, lng: 77.73164},
+            "truck": {lat: 12.80677, lng: 77.93164}
+            };
 
         // Instantiate (and display) a map object:
         var map = new H.Map(
@@ -34,7 +46,7 @@
             defaultLayers.vector.normal.map,
             {
                 zoom: 11,
-                center: {lat: 12.95677, lng: 77.73164}
+                center: destinations.truck
             });
 
         var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
