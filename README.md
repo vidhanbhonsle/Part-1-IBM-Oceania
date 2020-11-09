@@ -9,17 +9,11 @@ In this workshop we will learn how to create an interactive map using JS and RES
 ## Prerequisites
 An IDE - [VS Code](https://code.visualstudio.com/download)
 
-## Expected Outcome
-An HTML page which shows a map when opened in a browser.
-
-![Folding in action](/img/outcome.png)
-
 ## Steps
-#### Step 1 : Setup Visual Studio code
-#### Step 2 : Render a Map and place a marker on our current position with a custom image
-#### Step 3 : Search for all hospitals around us and place markers on them
-#### Step 4 : Draw a Route to one of the Hospital
-#### Step 5 : Select instructions from the route to be displayed
+#### Step 1 : Render a Map and customize it
+#### Step 2 : Place markers on the map with custom images
+#### Step 3 : Define the delivery sequence
+#### Step 4 : Draw a route for delivery
 #### End    : Final Code and Resources
 
 ## Acquire credentials from Developer Portal 
@@ -33,7 +27,7 @@ To access any of the APIs, first get your credentials by signing up for a freemi
 
 # Let's begin!
 
-[![Foo](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/img/s1.png)](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/Step1.md) 
+[![Foo](/img/s1.png)](/Step1.md) 
 
 
 
