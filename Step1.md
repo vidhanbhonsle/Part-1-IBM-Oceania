@@ -2,7 +2,7 @@
 # Render a Map and customize it
 
 ## Copy the code below in a file 'index.html'
-### Replace "YOUR_JS_API_KEY" with your API Key
+- Replace "YOUR_JS_API_KEY" with your API Key
 
 ``` html
 <!DOCTYPE html>
