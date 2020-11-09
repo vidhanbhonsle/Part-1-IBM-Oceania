@@ -53,24 +53,19 @@
 </html>
 ```
 
-## Adding a position marker using map object of Interactive maps API
-- Add a folder named img inside the folder Interactive_Map_With_HERE
-- Inside the folder img, save the image you want as the icon for truck and homes
-- You can also download the ones I used for [home](img/home.png) and [hospitals](img/truck.png)
+## Customize the map with YAML file
 - Add the following code before </script> tag
 
 ```javascript
-        // create an icon for the marker. Choose any image you want. I created mine using draw.io 
-            
-        var homeIcon = new H.map.Icon('img/home.png'); 
-            
-        // Create a marker using the previously instantiated icon:
-       
-        var posMarker = new H.map.Marker(myPosition,{icon:homeIcon});
-                
-        // Add the marker to the map 
-
-        map.addObject(posMarker);
+        function setStyle(map){
+              // get the vector provider from the base layer
+              var provider = map.getBaseLayer().getProvider();
+              var style = new H.map.Style('https://heremaps.github.io/maps-api-for-javascript-examples/change-style-at-load/data/dark.yaml',
+                'https://js.api.here.com/v3/3.1/styles/omv/');
+              // set the style on the existing layer
+              provider.setStyle(style);
+            }
+          setStyle(map);
 ```
 
 [![Foo](/img/s2.png)](/Step2.md) 
