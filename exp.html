@@ -66,5 +66,35 @@
               provider.setStyle(style);
             }
           setStyle(map);
+
+        // create an icon for the marker. Choose any image you want. I created mine using draw.io     
+        var homeIcon = new H.map.Icon('img/home.png'); 
+        var truckIcon = new H.map.Icon('img/truck.png'); 
+                  
+        // Create a marker using the previously instantiated icon
+        var posMarker1 = new H.map.Marker(destinations.destination1,{icon:homeIcon});
+        var posMarker2 = new H.map.Marker(destinations.destination2,{icon:homeIcon});
+        var posMarker3 = new H.map.Marker(destinations.destination3,{icon:homeIcon});
+        var posMarker4 = new H.map.Marker(destinations.destination4,{icon:homeIcon});
+        var posMarker5 = new H.map.Marker(destinations.destination5,{icon:homeIcon});
+        var posMarker6 = new H.map.Marker(destinations.destination6,{icon:homeIcon});
+        var posMarker7 = new H.map.Marker(destinations.destination7,{icon:homeIcon});
+        var posMarker8 = new H.map.Marker(destinations.destination8,{icon:homeIcon});
+        var posMarker9 = new H.map.Marker(destinations.destination9,{icon:homeIcon});
+        var posMarker10 = new H.map.Marker(destinations.destination10,{icon:homeIcon});
+        var posMarkerTruck = new H.map.Marker(destinations.truck,{icon:truckIcon});
+
+        // Add the marker to the map 
+        map.addObject(posMarker1);
+        map.addObject(posMarker2);
+        map.addObject(posMarker3);
+        map.addObject(posMarker4);
+        map.addObject(posMarker5);
+        map.addObject(posMarker6);
+        map.addObject(posMarker7);
+        map.addObject(posMarker8);
+        map.addObject(posMarker9);
+        map.addObject(posMarker10);
+        map.addObject(posMarkerTruck);
     </script>
 </html>
