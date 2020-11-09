@@ -1,21 +1,41 @@
-# Part 1: IBM Oceanic
+<p align="center">
+  <img src="https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/img/HERE_Logo_2016_POS_sRGB200X183.jpg" />
+</p>
 
-### Introduction
-Purpose: To monitor a person's temperate and guide them to reach the nearest hospital in case of emergency. This will be done by tracking their location, sending them the routing instructions and showing the route on map.
+## Introduction
 
-This code Pattern will help you understand how an IoT endpoint communicates with the IBM cloud using MQTT protocol over publish-subscribe architecture. You will get an overview of HERE Location Services and learn how to integrate HERE Location service with your IoT device. 
+In this workshop we will learn how to create an interactive map using JS and REST APIs from the HERE Location Suite.
 
-## Pre-requisites
+## Prerequisites
+An IDE - [VS Code](https://code.visualstudio.com/download)
 
-- IBM Cloud account
-- HERE Developer accuont
-- Python installed (3.8 prefered)
-- Any text editor (We are using VS Code)
+## Expected Outcome
+An HTML page which shows a map when opened in a browser.
 
-## Learning outcomes
+![Folding in action](/img/outcome.png)
 
-- Singup/login to IBM Cloud
-- Create 'Internet of Things Platform' service on IBM Cloud
-- Connect IoT endpoint with IBM Cloud
-- MQTT protocol in publish-subscribe architecture
-- Integrating HERE Location Services in IoT endpoint 
+## Steps
+#### Step 1 : Setup Visual Studio code
+#### Step 2 : Render a Map and place a marker on our current position with a custom image
+#### Step 3 : Search for all hospitals around us and place markers on them
+#### Step 4 : Draw a Route to one of the Hospital
+#### Step 5 : Select instructions from the route to be displayed
+#### End    : Final Code and Resources
+
+## Acquire credentials from Developer Portal 
+To access any of the APIs, first get your credentials by signing up for a freemium account
+
+[Register](https://developer.here.com/events/community-sa) for a free developer account</br>
+
+## Generate apikeys
+
+![Folding in action](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/img/RegistrationGif.gif)
+
+# Let's begin!
+
+[![Foo](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/img/s1.png)](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/Step1.md) 
+
+
+
+
+
