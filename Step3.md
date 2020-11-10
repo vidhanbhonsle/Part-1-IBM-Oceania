@@ -1,4 +1,4 @@
-# Define Delivery Sequence
+# Calulate Delivery order using HERE Waypoint Sequence
 
 ### Add the following code before </script> tag
 
