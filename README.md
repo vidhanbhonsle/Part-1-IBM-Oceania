@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this workshop we will learn how to create an interactive map using JS and REST APIs from the HERE Location Suite.
+In this webinar we will learn how to create an interactive map using JS and REST APIs from the HERE Location Suite.
 
 ## Prerequisites
 An IDE - [VS Code](https://code.visualstudio.com/download)
