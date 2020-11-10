@@ -4,7 +4,9 @@
 
 - Replace "REST_API_KEY" with your own
 
-```javascript          
+```javascript
+var data = "";
+
  function showDetails(){
             let url = 'https://wse.ls.hereapi.com/2/findsequence.json'+
             '?apiKey=REST_API_KEY'+
@@ -26,7 +28,7 @@
             
             // Storing response 
             const response = await fetch(url); 
-            var data = await response.json(); 
+            data = await response.json(); 
             }
             getapi(url);
             

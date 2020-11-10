@@ -97,6 +97,8 @@
         map.addObject(posMarker10);
         map.addObject(posMarkerTruck);
 
+        var data = "";
+        
         function showDetails(){
             let url = 'https://wse.ls.hereapi.com/2/findsequence.json'+
             '?apiKey=z9vYzze2wci1yOAz6C0bdkQqSb7rkJ0_2oe0_2JK4uY'+
@@ -118,7 +120,7 @@
             
             // Storing response 
             const response = await fetch(url); 
-            var data = await response.json(); 
+            data = await response.json(); 
             }
             getapi(url);
             
@@ -139,7 +141,7 @@
                     var destin = {lat,lng};
                     showRoute(origin,destin);
                     origin = destin;
-                    console.log(JSON.stringify(origin) + ':::' + JSON.stringify(destin));
+                    // console.log(JSON.stringify(origin) + ':::' + JSON.stringify(destin));
                     continue; 
                 }
                 }
