@@ -11,7 +11,4 @@ This makes it super easy to see your application on your browser.
 - Open the folder Interactive_Map_With_HERE
 - Click on File > New File and save it as 'index.html' within the folder
 
-[![Foo](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/img/s2.png)](https://github.com/vidhanbhonsle/Interactive-Map-Workshop/blob/master/Step2.md) 
-
-
 [![Foo](/img/s1.png)](/Step1.md)
