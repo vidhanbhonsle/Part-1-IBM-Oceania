@@ -27,7 +27,7 @@ To access any of the APIs, first get your credentials by signing up for a freemi
 
 # Let's begin!
 
-[![Foo](/img/s1.png)](/Step1.md) 
+[![Foo](/img/next.png)](/Step0.md) 
 
 
 
