@@ -14,7 +14,7 @@ An IDE - [VS Code](https://code.visualstudio.com/download)
 #### Step 1 : Render a Map and customize it
 #### Step 2 : Place markers on the map with custom images
 #### Step 3 : Define the delivery sequence
-#### Step 4 : Draw a route for delivery
+#### Step 4 : Calulate Delivery order using HERE Waypoint Sequence
 #### End    : Final Code and Resources
 
 ## Acquire credentials from Developer Portal 
