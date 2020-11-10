@@ -46,9 +46,6 @@
         var mapEvents = new H.mapevents.MapEvents(map);
         var behavior = new H.mapevents.Behavior(mapEvents);
 
-        // Get an instance of the routing service for using the routing API
-        var router = platform.getRoutingService();
-
     </script>
 </html>
 ```

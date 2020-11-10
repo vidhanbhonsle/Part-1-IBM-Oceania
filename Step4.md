@@ -3,6 +3,10 @@
 
 
 ```javascript
+
+// Get an instance of the routing service for using the routing API
+var router = platform.getRoutingService();
+
 function showRoute(origin,destin){          
         // Create the parameters for the routing request:
         var routingParameters = {
@@ -71,6 +75,5 @@ function showRoute(origin,destin){
         });
         }
 ```
-
 [![Foo](/img/s5.png)](/Step5.md) 
 
