@@ -49,6 +49,7 @@
     </script>
 </html>
 ```
+![Folding in action](/img/one.png)
 
 ## Customize the map with YAML file
 - Add the following code before </script> tag
