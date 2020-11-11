@@ -65,6 +65,7 @@
             }
           setStyle(map);
 ```
+
 ![Folding in action](/img/two.png)
 
 [![Foo](/img/s2.png)](/Step2.md) 
