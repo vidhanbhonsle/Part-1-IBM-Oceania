@@ -37,7 +37,7 @@ function showRoute(origin,destin){
                 var routeOutline = new H.map.Polyline(linestring, {
                   style: {
                     lineWidth: 10,
-                    strokeColor: 'rgba(0, 128, 255, 0.7)',
+                    strokeColor: 'rgba(255, 0, 0, 0.7)',
                     lineTailCap: 'arrow-tail',
                     lineHeadCap: 'arrow-head'
                   }

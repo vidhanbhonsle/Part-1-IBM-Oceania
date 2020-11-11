@@ -7,17 +7,17 @@
 ```javascript
         // Get your current position from wego.here.com
           var destinations = { 
-            "destination1": {lat: 12.96677,lng: 77.75164}, 
-            "destination2": {lat: 12.85677, lng: 77.83164},
-            "destination3": {lat: 12.99677, lng: 77.63164},
-            "destination4": {lat: 12.86677, lng: 77.73164},
-            "destination5": {lat: 12.95677, lng: 77.83164},
-            "destination6": {lat: 12.84677, lng: 77.63164},
-            "destination7": {lat: 12.87677, lng: 77.74164},
-            "destination8": {lat: 12.95677, lng: 77.78164},
-            "destination9": {lat: 12.96677, lng: 77.83164},
-            "destination10":{lat: 12.95677, lng: 77.73164},
-            "truck": {lat: 12.80677, lng: 77.93164}
+            "destination1": {lat: -37.778512, lng: 144.974306}, 
+            "destination2": {lat: -37.793962, lng: 144.990440}, 
+            "destination3": {lat: -37.811640, lng: 144.957030}, 
+            "destination4": {lat: -37.775800, lng: 144.933553},
+            "destination5": {lat: -37.709759, lng: 144.974606}, 
+            "destination6": {lat: -37.714317, lng: 144.967514},
+            "destination7": {lat: -37.722485, lng: 144.973918}, 
+            "destination8": {lat: -37.756360, lng: 144.906203}, 
+            "destination9": {lat: -37.818924, lng: 144.888215},
+            "destination10": {lat: -37.818924, lng: 144.889215},  
+            "truck": {lat: -37.808290, lng: 144.980248}
             }; 
 ```
 
