@@ -5,7 +5,7 @@
 ```javascript
 
 // Get an instance of the routing service for using the routing API
-var router = platform.getRoutingService();
+var router = platform.getRoutingService(null,8);
 
 function showRoute(origin,destin){          
         // Create the parameters for the routing request:
