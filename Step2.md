@@ -34,6 +34,8 @@
               });
 ```
 
+![Folding in action](/img/three.png)
+
 - Add a folder named "img" inside the folder "Interactive_Map_With_HERE"
 - Inside the folder "img", save the image you want as the icon for truck and homes
 - You can also download the ones I used for [home](img/home.png) and [truck](img/truck.png)
