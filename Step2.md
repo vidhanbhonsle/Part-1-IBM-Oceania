@@ -73,5 +73,7 @@
         map.addObject(posMarkerTruck);
 ```
 
+![Folding in action](/img/four.png)
+
 [![Foo](/img/s3.png)](/Step3.md) 
 
