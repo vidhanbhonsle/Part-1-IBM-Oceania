@@ -75,5 +75,8 @@ function showRoute(origin,destin){
         });
         }
 ```
+
+![Folding in action](/img/final.png)
+
 [![Foo](/img/s5.png)](/Step5.md) 
 
