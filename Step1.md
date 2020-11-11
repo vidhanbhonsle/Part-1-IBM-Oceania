@@ -1,5 +1,5 @@
 
-# Render a Map and customize it
+# Create and Render a Map and customise it
 
 ## Copy the code below in a file 'index.html'
 - Replace "YOUR_JS_API_KEY" with your API Key
