@@ -2,14 +2,14 @@
 
 ### Add the following code before </script> tag
 
-- Replace "REST_API_KEY" with your own
+- Replace "HERE_API_KEY" with your own
 
 ```javascript
 var data = "";
 
  function showDetails(){
             let url = 'https://wse.ls.hereapi.com/2/findsequence.json'+
-            '?apiKey=REST_API_KEY'+
+            '?apiKey=HERE_API_KEY'+
             '&start='+destinations.truck.lat+','+destinations.truck.lng+
             '&destination0='+destinations.destination1.lat+','+destinations.destination1.lng+
             '&destination1='+destinations.destination2.lat+','+destinations.destination2.lng+
@@ -49,7 +49,6 @@ var data = "";
                     var destin = {lat,lng};
                     showRoute(origin,destin);
                     origin = destin;
-                    console.log(JSON.stringify(origin) + ':::' + JSON.stringify(destin));
                     continue; 
                 }
                 }
